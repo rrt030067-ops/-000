@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر إقتني للعقيق اليماني الفاخر</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+        body {
+            background-color: #2b1d1a; /* لون داكن مستوحى من صخور العقيق والكبداني */
+            color: #f4ece1;
+        }
+        /* Header & Nav */
+        header {
+            background-color: #1a100f;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #8B2500;
+        }
+        .top-bar {
+            background-color: #8B2500; /* لون العقيق الرماني الناري */
+            color: #fff3db;
+            text-align: center;
+            padding: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: #e59866;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo i {
+            color: #d9534f;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #dcd0c0;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #e59866;
+        }
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 22px;
+            color: #e59866;
+        }
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            background-color: #d9534f;
+            color: white;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(20, 10, 8, 0.75), rgba(20, 10, 8, 0.85)), url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            border-bottom: 3px solid #6b1d11;
+        }
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: #ffcc66;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+        }
+        .hero p {
+            font-size: 19px;
+            margin-bottom: 30px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #eeddbb;
+            line-height: 1.6;
+        }
+        .btn {
+            background-color: #a03314;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s, transform 0.2s;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .feature-box {
+            background: #382522;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border-top: 4px solid #d9534f;
+            border: 1px solid #4a322e;
+        }
+        .feature-box i {
+            font-size: 34px;
+            color: #ffcc66;
+            margin-bottom: 15px;
+        }
+        .feature-box h3 {
+            color: #ffcc66;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .feature-box p {
+            color: #d1c2b4;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Products Section */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section-title {
+            text-align: center;
+            margin: 50px 0 25px;
+            font-size: 32px;
+            color: #ffcc66;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #a03314;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background: #382522;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #4a322e;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+        }
+        .product-img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-bottom: 2px solid #4a322e;
+        }
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+        .product-title {
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #fff3db;
+        }
+        .product-price {
+            color: #ffcc66;
+            font-weight: 700;
+            font-size: 19px;
+            margin-bottom: 18px;
+        }
+        .add-to-cart {
+            width: 100%;
+            padding: 10px;
+            background-color: #8B2500;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .add-to-cart:hover {
+            background-color: #a03314;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #140a08;
+            color: #dcd0c0;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            border-top: 2px solid #8B2500;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        footer .owner {
+            color: #ffcc66;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        footer .designer {
+            color: #a03314;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الشريط العلوي -->
+    <div class="top-bar">
+        💎 متجر إقتني الفاخر | روائع العقيق اليماني الطبيعي والأصلي 100% 💎
+    </div>
+
+    <!-- شريط التنقل -->
+    <header>
+        <div class="navbar">
+            <div class="logo"><i class="fas fa-gem"></i> إقتني للعقيق اليماني</div>
+            <ul class="nav-links">
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#products">الخواتم والنوادر</a></li>
+                <li><a href="#features">مميزاتنا</a></li>
+                <li><a href="#footer">تواصل معنا</a></li>
+            </ul>
+            <div class="cart-icon" onclick="alert('تم النقر على سلة المشتريات')">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- واجهة الترحيب -->
+    <section class="hero">
+        <h1>نوادر العقيق اليماني الأصيل</h1>
+        <p>اقتني أجمل وأندر فصوص العقيق اليماني المصنوعة بمهارة يدوية وخواتم فضة خالصة صاغها أشهر حرفيي اليمن خصيصاً لذوقك الرفيع.</p>
+        <a href="#products" class="btn">اكتشف التشكيلة الفاخرة</a>
+    </section>
+
+    <!-- المميزات -->
+    <div class="features" id="features">
+        <div class="feature-box">
+            <i class="fas fa-gem"></i>
+            <h3>عقيق طبيعي 100%</h3>
+            <p>أفخر أنواع العقيق اليماني (الرماني، الكبداني، والمشجر) المستخرج من جبال صنعاء وحراز.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-ring"></i>
+            <h3>صياغة فضة أصلية</h3>
+            <p>خواتم عيار 925 مطعمة بأحجار كريمة أصلية ونقوش يدوية تراثية عريقة.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-shield-alt"></i>
+            <h3>ضمان الأصالة</h3>
+            <p>نضمن لك جودة الحجر الأصلي وخلوه من أي معالجات صناعية.</p>
+        </div>
+    </div>
+
+    <!-- قسم المنتجات -->
+    <div class="container" id="products">
+        <h2 class="section-title">تشكيلة الخواتم والنوادر</h2>
+        <div class="products-grid">
+            
+            <!-- منتج 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=500&q=80" alt="خاتم عقيق رماني" class="product-img">
+                <div class="product-info">
+                    <div class="product-title">خاتم عقيق رماني ناري أصيل</div>
+                    <div class="product-price">95,000 ريال يمني</div>
+                    <button class="add-to-cart" onclick="addToCart()">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <!-- منتج 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=500&q=80" alt="خاتم عقيق كبداني" class="product-img">
+                <div class="product-info">
+                    <div class="product-title">خاتم عقيق كبداني فاخر</div>
+                    <div class="product-price">120,000 ريال يمني</div>
+                    <button class="add-to-cart" onclick="addToCart()">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <!-- منتج 3 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1620656738962-d2f00d39d0f5?auto=format&fit=crop&w=500&q=80" alt="فص عقيق مشجر نادر" class="product-img">
+                <div class="product-info">
+                    <div class="product-title">فص عقيق يمني مشجر نادر</div>
+                    <div class="product-price">180,000 ريال يمني</div>
+                    <button class="add-to-cart" onclick="addToCart()">إضافة للسلة</button>
+                </div>
+            </div>
+
+            <!-- منتج 4 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=500&q=80" alt="خاتم فضة رجالي" class="product-img">
+                <div class="product-info">
+                    <div class="product-title">خاتم فضة بصياغة يدوية ملكية</div>
+                    <div class="product-price">75,000 ريال يمني</div>
+                    <button class="add-to-cart" onclick="addToCart()">إضافة للسلة</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- التذييل -->
+    <footer>
+        <p class="owner">لصاحبها : حاتم المرهبي</p>
+        <p class="designer">تصميم: محمد شمسان الصطاني 2026</p>
+    </footer>
+
+    <script>
+        let cartCount = 0;
+        function addToCart() {
+            cartCount++;
+            document.getElementById('cartCount').innerText = cartCount;
+            alert('تمت إضافة المنتج إلى سلة المشتريات بنجاح!');
+        }
+    </script>
+
+</body>
+</html>
